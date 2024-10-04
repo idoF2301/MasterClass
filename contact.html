@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צור קשר - MasterClass</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Logo.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="logo.png" alt="MasterClass Logo" class="logo">
+            <ul>
+                <li><a href="index.html">דף הבית</a></li>
+                <li><a href="projects.html">פרויקטים</a></li>
+                <li><a href="contact.html">צור קשר</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-form">
+        <h2>צרו איתנו קשר</h2>
+        <p>השאירו פרטים וצוות המשרד יחזור אליכם בהקדם.</p>
+        <form id="contactForm">
+            <div>
+                <label for="fullname">*שם מלא</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            
+            <div>
+                <label for="email">דוא"ל</label>
+                <input type="email" id="email" name="email">
+            </div>
+            
+            <div>
+                <label for="phone">מספר נייד</label>
+                <input type="tel" id="phone" name="phone" placeholder="0512345678" pattern="[0]{1}[5]{1}[0-9]{8}" required>
+            </div>
+            
+            <div>
+                <label for="subject">נושא ופניה</label>
+                <input type="text" id="subject" name="subject">
+            </div>
+            
+            <div>
+                <label for="message">תוכן ההודעה</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            
+            <button type="submit" for="submit">שליחה</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 כל הזכויות שמורות ל-MasterClass בנייה בע"מ</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            // Collect form data
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+    
+            // Create contact data object
+            const contactData = {
+                fullname: fullname,
+                email: email,
+                phone: phone,
+                subject: subject,
+                message: message,
+            };
+    
+            // Get existing data from LocalStorage or initialize an empty array
+            let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+    
+            // Add the new contact data to the array
+            contacts.push(contactData);
+    
+            // Save the updated contacts array back to LocalStorage
+            localStorage.setItem('contacts', JSON.stringify(contacts));
+    
+            // Show success message
+            alert('הפניה נשמרה בהצלחה!');
+            // Optionally reset the form
+            document.getElementById('contactForm').reset();
+        });
+    </script>
+    
+</body>
+</html>

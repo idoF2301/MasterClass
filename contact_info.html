@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צפה בפרטי ההתקשרות</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>פרטי ההתקשרות</h1>
+    </header>
+
+    <section class="data-display">
+        <h2>הפרטים שנשמרו</h2>
+        <div id="contactData"></div>
+    </section>
+
+    <script>
+        const password = prompt("אנא הכנס סיסמא גישה:");
+        const correctPassword = "masterclass2301";
+
+        if (password === correctPassword) {
+            const storedContacts = JSON.parse(localStorage.getItem('contacts'));
+            const contactDataDiv = document.getElementById('contactData');
+
+            if (storedContacts && storedContacts.length > 0) {
+                storedContacts.forEach(contact => {
+                    contactDataDiv.innerHTML += `
+                        <div class="contact-entry">
+                            <p><strong>שם מלא:</strong> ${contact.fullname}</p>
+                            <p><strong>דוא"ל:</strong> ${contact.email}</p>
+                            <p><strong>מספר נייד:</strong> ${contact.phone}</p>
+                            <p><strong>נושא:</strong> ${contact.subject}</p>
+                            <p><strong>תוכן ההודעה:</strong> ${contact.message}</p>
+                            <hr>
+                        </div>
+                    `;
+                });
+            } else {
+                contactDataDiv.innerHTML = "<p>לא נמצאו פרטים.</p>";
+            }
+        } else {
+            alert("סיסמא לא נכונה!");
+            window.location.href = "index.html"; // Redirect back to the home page if password is incorrect
+        }
+    </script>
+
+</body>
+</html>
