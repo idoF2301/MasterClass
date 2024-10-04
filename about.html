@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אודות - MasterClass</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Logo.jpg">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="Logo.jpg" alt="MasterClass Logo" class="logo">
+            <ul>
+                <li><a href="index.html">דף הבית</a></li>
+                <li><a href="projects.html">פרויקטים</a></li>
+                <li><a href="contact.html">צור קשר</a></li>
+                <li><a href="about.html">אודות</a></li>
+            </ul>
+            <a href="https://wa.me/972509520555?text=Hello" target="_blank" class="whatsapp-button">
+                <img src="whatsapp-icon.png" alt="WhatsApp">
+            </a>
+        </nav>
+    </header>
+
+    <button class="accessibility-toggle" onclick="toggleAccessibilityMenu()">
+        <img src="accessibility-icon.png" alt="Accessibility">
+    </button>
+
+    <div id="accessibility-menu" class="accessibility-menu">
+        <h2>הגדרות נגישות</h2>
+        <label>
+            <img src="contrast-icon.png" alt="High Contrast">
+            <input type="checkbox" onclick="toggleHighContrast()"> מצב ניגודיות גבוהה
+        </label>
+        <label>
+            <img src="largerText-icon.png" alt="Larger Text">
+            <input type="checkbox" onclick="toggleLargerText()"> טקסט גדול יותר
+        </label>
+    </div>
+
+    <main id="about-section">
+        <h1 class="about-title">אודות MasterClass</h1>
+        <p class="about-text">
+            בברוכים הבאים ל-MasterClass, חברה לשיפוץ ובנייה המובילה את הדרך 
+            בתחום הבנייה בישראל. עם ניסיון רב, אנחנו מתמקדים בשיפוץ 
+            דירות ובניית פרויקטים מסחריים, תוך שימת דגש על איכות וחדשנות.
+        </p>
+        <p class="about-text">
+            הצוות המיומן שלנו,בעלי ניסיון רב, פועל בשיתוף פעולה הדוק 
+            כדי להבטיח שכל פרויקט יתנהל ברמה הגבוהה ביותר. אנחנו גאים בעבודתנו ובמחויבות שלנו 
+            להעניק לכל לקוח חוויה בלתי נשכחת.
+        </p>
+        <p class="about-text">
+            חברת MasterClass מחויבת לספק שירותים מקצועיים, מהירים ועם יחס אישי לכל לקוח. 
+            אנו מאמינים כי השקעה בכל פרט היא המפתח להצלחה, ולכן אנו מתייחסים לכל פרויקט 
+            כאילו הוא הפרויקט שלנו.
+        </p>
+    </main>
+
+    <footer>
+        <p>© 2024 כל הזכויות שמורות ל-MasterClass בנייה בע"מ</p>
+        <p>ליצירת קשר:</p>
+        <ul>
+            <li>טלפון: <a href="tel:972509520555">0509520555</a></li>
+            <li>דוא"ל: <a href="mailto:Aviramvaknin5@gmail.com">Aviramvaknin5@gmail.com</a></li>
+        </ul>
+    </footer>
+    
+
+       <script src="script.js"></script>
+       <div id="loading-screen" class="loading-screen">
+        <div class="loader"></div>
+    </div>
+    
+</body>
+</html>
