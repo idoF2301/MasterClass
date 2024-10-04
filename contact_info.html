@@ -15,6 +15,7 @@
     <section class="data-display">
         <h2>הפרטים שנשמרו</h2>
         <div id="contactData"></div>
+        <button onclick="clearData()">נקה את הנתונים</button> <!-- Move the button here -->
     </section>
 
     <script>
@@ -45,20 +46,13 @@
             alert("סיסמא לא נכונה!");
             window.location.href = "index.html"; // Redirect back to the home page if password is incorrect
         }
+
+        // Function to clear the LocalStorage data
+        function clearData() {
+            localStorage.removeItem('contacts');
+            document.getElementById('contactData').innerHTML = "<p>הנתונים נמחקו.</p>";
+        }
     </script>
-
-<section class="data-display">
-    <h2>הפרטים שנשמרו</h2>
-    <div id="contactData"></div>
-    <button onclick="clearData()">נקה את הנתונים</button>
-</section>
-
-<script>
-    function clearData() {
-        localStorage.removeItem('contacts');
-        document.getElementById('contactData').innerHTML = "<p>הנתונים נמחקו.</p>";
-    }
-</script>
 
 </body>
 </html>
