@@ -55,42 +55,6 @@
     <footer>
         <p>© 2024 כל הזכויות שמורות ל-MasterClass בנייה בע"מ</p>
     </footer>
-
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-            
-            // Collect form data
-            const fullname = document.getElementById('fullname').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-    
-            // Create contact data object
-            const contactData = {
-                fullname: fullname,
-                email: email,
-                phone: phone,
-                subject: subject,
-                message: message,
-            };
-    
-            // Get existing data from LocalStorage or initialize an empty array
-            let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
-    
-            // Add the new contact data to the array
-            contacts.push(contactData);
-    
-            // Save the updated contacts array back to LocalStorage
-            localStorage.setItem('contacts', JSON.stringify(contacts));
-    
-            // Show success message
-            alert('הפניה נשמרה בהצלחה!');
-            // Optionally reset the form
-            document.getElementById('contactForm').reset();
-        });
-    </script>
     
 </body>
 </html>
