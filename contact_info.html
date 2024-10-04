@@ -47,5 +47,18 @@
         }
     </script>
 
+<section class="data-display">
+    <h2>הפרטים שנשמרו</h2>
+    <div id="contactData"></div>
+    <button onclick="clearData()">נקה את הנתונים</button>
+</section>
+
+<script>
+    function clearData() {
+        localStorage.removeItem('contacts');
+        document.getElementById('contactData').innerHTML = "<p>הנתונים נמחקו.</p>";
+    }
+</script>
+
 </body>
 </html>
