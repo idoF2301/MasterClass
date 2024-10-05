@@ -230,7 +230,18 @@ footer {
 .high-contrast a {
     color: #00f;
 }
-
+.high-contrast .projects{
+    background-color:black;
+}
+.high-contrast .accessibility-menu h2,.high-contrast .accessibility-menu label{
+    background-color: black;
+}
+.high-contrast .contact-form{
+    background-color: black;
+}
+.high-contrast .project-title{
+    background-color: black;
+}
 .larger-text *{
     font-size: 50px;
 }
