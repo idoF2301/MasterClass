@@ -160,6 +160,7 @@ footer {
     object-fit: cover;
     cursor: pointer;
     transition: transform 0.3s ease;
+    
 }
 .whatsapp-button {
     position: fixed;
@@ -174,78 +175,6 @@ footer {
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.accessibility-toggle {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-.accessibility-toggle img {
-    width: 40px;
-    height: 40px;
-}
-
-.accessibility-menu label img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-.accessibility-menu {
-    position: fixed;
-    top: 0;
-    right: -250px;
-    width: 250px;
-    height: 100%;
-    background-color: #f4f4f4;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
-    padding: 20px;
-    transition: right 0.4s ease;
-}
-
-.accessibility-menu h2 {
-    margin-top: 0;
-}
-
-.accessibility-menu label {
-    display: block;
-    margin: 10px 0;
-}
-
-.accessibility-menu.active {
-    right: 0;
-}
-.high-contrast {
-    background-color: #000;
-    color: #fff;
-}
-
-.high-contrast a {
-    color: #00f;
-}
-.high-contrast .projects{
-    background-color:black;
-}
-.high-contrast .accessibility-menu h2,.high-contrast .accessibility-menu label{
-    background-color: black;
-}
-.high-contrast .contact-form{
-    background-color: black;
-}
-.high-contrast .project-title{
-    background-color: black;
-}
-.larger-text *{
-    font-size: 50px;
-}
-
 .whatsapp-button img {
     width: 40px;
     height: 40px;
@@ -421,3 +350,48 @@ body {
     }
 }
 
+body {
+    position: relative;
+    z-index: 1;
+}
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 2rem;
+}
+
+.project {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project img {
+    width: 100%;
+    height:300px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.project a{
+    background-color: #f8f8f800;
+    color: black;
+    padding: 10px;
+    margin: 5px 0;
+    text-decoration: none;
+}
+#project-title-index{
+    background-image: url('SkyScraper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
