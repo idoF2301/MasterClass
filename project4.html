@@ -12,17 +12,14 @@
     <a href="https://wa.me/972509520555?" target="_blank" class="whatsapp-button">
         <img src="whatsapp-icon.png" alt="WhatsApp">
     </a>
-    <header>
-        <nav>
-            <img src="Logo.jpg" alt="MasterClass Logo" class="logo">
-            <ul>
-                <li><a href="index.html">דף הבית</a></li>
-                <li><a href="projects.html">פרויקטים</a></li>
-                <li><a href="contact.html">צור קשר</a></li>
-                <li><a href="about.html">אודות</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header"></div>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+</script>
     
     
 <section class="project-images">
@@ -81,14 +78,14 @@
         document.getElementById("modalImage").src = images[currentImageIndex].src;
     }
 </script>
-<footer>
-    <p>© 2024 כל הזכויות שמורות ל-MasterClass בנייה בע"מ</p>
-    <p>ליצירת קשר:</p>
-    <ul>
-        <li>טלפון: <a href="tel:972509520555">0509520555</a></li>
-        <li>דוא"ל: <a href="mailto:Aviramvaknin5@gmail.com">Aviramvaknin5@gmail.com</a></li>
-    </ul>
-</footer>
+<div id="footer"></div>
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        });
+</script>
 <script src="script.js"></script>
 
 </body>
